@@ -1,0 +1,22 @@
+# Flask: framework web leve usado para criar a aplicação
+Flask==2.3.3
+
+# Flask-SocketIO: permite comunicação em tempo real via WebSockets
+Flask-SocketIO==5.3.4
+
+# python-dotenv: carrega variáveis de ambiente do arquivo .env (como API keys)
+python-dotenv==1.0.1
+
+# eventlet: servidor assíncrono necessário para suportar WebSocket com Flask-SocketIO
+eventlet==0.35.1
+
+# google-generativeai: biblioteca cliente oficial para acessar a API do Gemini
+google-generativeai==0.7.2
+
+langchain-community==0.2.7
+
+langchain-google-genai==1.0.10
+
+langchain==0.2.15
+
+faiss-cpu==1.11.0

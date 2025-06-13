@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fefce8, #fff7ed);
+    color: #374151;
+    overflow: hidden;
+  }
+
+  .chat-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+  }
+
+  /* Floating eggs no fundo */
+  .floating-eggs {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .egg-particle {
+    position: absolute;
+    top: -2rem;
+    opacity: 0.3;
+    animation: fall-eggs linear infinite;
+    font-size: 1rem;
+  }
+
+  @keyframes fall-eggs {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  header {
+    z-index: 2;
+    text-align: center;
+    background: rgba(255 255 255 / 0.9);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(230,180,20,0.15);
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    color: #b45309;
+    text-shadow: 1px 1px 2px #fcd34d;
+  }
+
+  form {
+    z-index: 2;
+    background: rgba(255 255 255 / 0.9);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(230,180,20,0.15);
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #fbbf24;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff9e6;
+    color: #92400e;
+    transition: border-color 0.3s;
+  }
+
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #f59e0b, #eab308);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(229, 158, 10, 0.3);
+  }
+
+  button:hover {
+    background: linear-gradient(90deg, #d97706, #ca8a04);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(217, 132, 6, 0.4);
+  }
+
+  .chat-label {
+    z-index: 2;
+    text-align: center;
+    color: #b45309;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px #fcd34d;
+  }
+
+  #historico {
+    z-index: 2;
+    background: rgba(255 255 255 / 0.95);
+    border: 2px solid #fbbf24;
+    border-radius: 12px;
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    font-family: 'Segoe UI', sans-serif;
+    white-space: pre-line;
+    color: #374151;
+    box-shadow: inset 0 2px 8px rgba(229, 158, 10, 0.1);
+    flex: 1;
+  }
+
+  /* Cores das mensagens */
+  #historico div {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 6px;
+    line-height: 1.4;
+  }
+
+  /* Estilo para mensagens de usuário */
+  #historico div[style*="red"] {
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 4px solid #ef4444;
+    color: #dc2626;
+  }
+
+  /* Estilo para mensagens de atendente */
+  #historico div[style*="blue"] {
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid #3b82f6;
+    color: #2563eb;
+  }
+
+  /* Scrollbar personalizada */
+  #historico::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #historico::-webkit-scrollbar-track {
+    background: #fef3c7;
+    border-radius: 4px;
+  }
+
+  #historico::-webkit-scrollbar-thumb {
+    background: #fbbf24;
+    border-radius: 4px;
+  }
+
+  #historico::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
+  }
+
+  /* Responsividade */
+  @media (max-width: 640px) {
+    .button-group {
+      flex-direction: column;
+    }
+    
+    button {
+      width: 100%;
+    }
+    
+    header h1 {
+      font-size: 1.4rem;
+    }
+  }

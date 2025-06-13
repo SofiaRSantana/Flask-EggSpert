@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block titulo %}{% endblock %} - EggSpert Chat</title>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+
+</head>
+<body>
+  <div class="chat-wrapper">
+    <!-- Floating eggs animation -->
+    <div class="floating-eggs" id="floating-eggs"></div>
+
+    <header>
+      <h1>🥚 {% block cabecalho %}{% endblock %}</h1>
+    </header>
+
+    {% block formulario %}
+    <form method="POST" id="formulario" onsubmit="return validarFormulario(this)">
+      <input type="text" name="mensagem" id="campoMensagem" placeholder="Digite sua mensagem sobre ovos..." required />
+      <div class="button-group">
+        <button type="submit" name="enviar" onclick="setRequisito(true)">🍳 Enviar</button>
+        <button type="submit" name="encerrar" onclick="setRequisito(false)">🚪 Encerrar Sessão</button>
+      </div>
+    </form>
+    {% endblock %}
+
+    <h2 class="chat-label">🗨️ Janela do Chat</h2>
+    {% block chat %}
+    <div id="historico">
+      {% for linha in historico %}
+        {{ linha|safe }}
+      {% endfor %}
+    </div>
+    {% endblock %}
+  </div>
+
+  <script src="{{ url_for('static', filename='base.js') }}"></script>
+</body>
+</html>

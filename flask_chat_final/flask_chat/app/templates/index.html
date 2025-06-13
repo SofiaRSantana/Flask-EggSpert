@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🥚 EggSpert Chat - IA com Ovos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="egg-background">
+    <div class="floating-eggs" id="floating-eggs"></div>
+
+    <header class="hero" role="banner">
+      <h1>🥚 EggSpert Chat</h1>
+      <p class="welcome-message">
+        Bem-vindo ao lugar mais divertido e curioso sobre ovos!<br />
+        Aqui você vai encontrar respostas para todas as suas dúvidas — seja em biologia, culinária, química, física, arte, cultura e muito mais!<br />
+        Prepare-se para aprender de um jeito leve, descobrir curiosidades incríveis e dar boas risadas com piadas que são de chocar o bico!<br />
+        Entre, explore e divirta-se — o mundo dos ovos é mais fascinante do que <em>você</em> imagina!
+      </p>
+
+      <div class="cta-buttons" role="navigation" aria-label="Opções de entrada">
+        <button class="btn" onclick="abrirJanela('cliente')">👤 Entrar como Cliente</button>
+        <button class="btn" onclick="abrirJanela('especialista')">💼 Entrar como Especialista</button>
+        <button class="btn" onclick="ouvirPiada()">Ouvir Piada</button>
+      </div>
+    </header>
+
+    <section class="team" aria-label="Equipe EggSpert Chat">
+      <h2>Nossa Equipe</h2>
+      <div class="team-cards">
+        <article class="team-member" tabindex="0">
+          <p>Dmitri Yukio Fuschi Kogake</p>
+        </article>
+        <article class="team-member" tabindex="0">
+          <p>Heloisa Matias de Jesus</p>
+        </article>
+        <article class="team-member" tabindex="0">
+          <p>Raissa Arruda Casale</p>
+        </article>
+        <article class="team-member" tabindex="0">
+          <p>Raquel Tolomei</p>
+        </article>
+        <article class="team-member" tabindex="0">
+          <p>Sofia Rodrigues Santana</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="side-by-side-container" aria-label="Temas e perguntas frequentes">
+      <div class="box temas" aria-label="Categorias de perguntas populares">
+        <h2>🔖 Temas</h2>
+        <div class="tags" role="list">
+          <div class="tag" role="listitem" tabindex="0">Valor Nutricional</div>
+          <div class="tag" role="listitem" tabindex="0">Tipos de Ovos</div>
+          <div class="tag" role="listitem" tabindex="0">Frescura</div>
+          <div class="tag" role="listitem" tabindex="0">Curiosidades</div>
+          <div class="tag" role="listitem" tabindex="0">Receitas</div>
+          <div class="tag" role="listitem" tabindex="0">Cuidados e Armazenamento</div>
+        </div>
+      </div>
+
+      <div class="box perguntas" aria-label="O que você pode perguntar?">
+        <h2>❓ Possíveis perguntas</h2>
+        <ul>
+          <li>🥚 Qual o valor nutricional dos ovos?</li>
+          <li>🐣 Qual a diferença entre ovo caipira e branco?</li>
+          <li>🍳 Como saber se um ovo está fresco?</li>
+          <li>💡 Quais curiosidades científicas sobre ovos?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="curiosity-box" aria-label="Curiosidade sobre ovos">
+      <strong>Você sabia?</strong> O ovo não é apenas uma fonte rica de proteínas completas, mas a cor da casca do ovo não influencia no seu valor nutricional. A cor depende da raça da galinha!
+    </section>
+
+    <footer>
+      <p>© 2025 EggSpert AI • O futuro está dentro da casca.</p>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
